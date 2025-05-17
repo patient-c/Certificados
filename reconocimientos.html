@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconocimientos | Rolando Rotela</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="matrix"></canvas>
+
+    <!-- Botón para volver a la página principal -->
+    <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Volver
+    </a>
+
+    <div class="recognition-container">
+        <h1 class="recognition-title">Reconocimientos Especiales</h1>
+
+        <div class="recognition-column">
+            <div class="recognition-image">
+                <img src="reconocimientos/reconocimiento1.jpg" alt="Reconocimiento 1">
+            </div>
+            <div class="recognition-image">
+                <img src="reconocimientos/reconocimiento2.jpg" alt="Reconocimiento 2">
+            </div>
+            <div class="recognition-image">
+                <img src="reconocimientos/reconocimiento3.jpg" alt="Reconocimiento 3">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para ampliar imagen -->
+    <div id="modal" class="modal">
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
