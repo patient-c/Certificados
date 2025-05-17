@@ -1,7 +1,5 @@
 # Portafolio de Certificados - Rolando Rotela
 
-![Banner del proyecto](https://via.placeholder.com/800x200/121212/e0e0e0?text=Certificados+Rolando+Rotela)
-
 ## 📋 Descripción
 
 Este repositorio contiene el código fuente de un portafolio digital para mostrar certificados profesionales y reconocimientos especiales. Se trata de un sitio web estático con un diseño minimalista y moderno inspirado en la estética de Matrix, utilizando una paleta monocromática que va desde el negro puro hasta diferentes tonos de gris.
