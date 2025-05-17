@@ -370,6 +370,21 @@ body {
     
     .cv-header {
         padding: 2rem 1.5rem;
+        /* Agrega margen superior para evitar que el botón tape el título */
+        margin-top: 2.5rem;
+    }
+    
+    /* Cambia posición del botón de reconocimientos en móviles */
+    .recognition-btn {
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+    
+    .recognition-btn:hover {
+        transform: translateX(-50%) translateY(-2px);
     }
     
     .contact-info span {
@@ -408,6 +423,11 @@ body {
         font-size: 1.8rem;
     }
     
+    .cv-header {
+        /* Aumentar margen superior en dispositivos muy pequeños */
+        margin-top: 3rem;
+    }
+    
     .section-title {
         font-size: 1.2rem;
     }
@@ -424,7 +444,40 @@ body {
     .recognition-item {
         height: 300px;
     }
+    
+    /* Ajustes adicionales para el botón de reconocimientos en dispositivos muy pequeños */
+    .recognition-btn {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
 }
+
+/* Media queries para el botón Volver */
+@media (max-width: 768px) {
+    .back-btn {
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+    
+    .back-btn:hover {
+        transform: translateX(-50%) translateY(-2px);
+    }
+    
+    .recognition-container {
+        margin-top: 3.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .back-btn {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+}
+
 .recognition-column {
     display: flex;
     flex-direction: column;
