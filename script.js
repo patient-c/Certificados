@@ -131,9 +131,9 @@ document.querySelectorAll('.recognition-image img').forEach(img => {
     });
 });
 
-// Cerrar modal al hacer clic en cualquier parte
+// Cerrar modal al hacer clic en cualquier parte - CORRECCIÓN:
 document.getElementById('modal').addEventListener('click', (e) => {
-    if (e.target === document.getElementById('modal') {
+    if (e.target === document.getElementById('modal')) { // Se añadió el paréntesis que faltaba
         document.getElementById('modal').style.display = "none";
     }
 });
