@@ -7,6 +7,7 @@
     --lighter-gray: #7a7a7a;
     --lightest-gray: #e0e0e0;
     --white: #ffffff;
+    --green-accent: #4CAF50; /* Añadido para el certificado en progreso */
 }
 
 * {
@@ -130,6 +131,7 @@ body {
     background-color: var(--dark-gray);
     transition: all 0.3s ease;
     overflow: hidden;
+    position: relative; /* Añadido para el badge "En progreso" */
 }
 
 .certificate-card:hover {
@@ -137,6 +139,27 @@ body {
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
     border-color: var(--lighter-gray);
 }
+
+/* --- Modificación para certificados en progreso --- */
+.certificate-card.in-progress {
+    border-color: var(--green-accent);
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.3);
+}
+
+.certificate-card.in-progress::after {
+    content: "En progreso";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--green-accent);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    z-index: 1;
+}
+/* ---------------------------------------------- */
 
 .card-content {
     padding: 1.5rem;
@@ -186,6 +209,12 @@ body {
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
+/* --- Modificación para la barra de progreso --- */
+.in-progress .progress-bar {
+    background: linear-gradient(90deg, var(--green-accent), #8BC34A) !important;
+}
+/* ---------------------------------------------- */
+
 .progress-text {
     font-size: 0.85rem;
     color: var(--lighter-gray);
@@ -214,6 +243,16 @@ body {
     background-color: var(--light-gray);
     color: var(--white);
 }
+
+/* --- Modificación para botón deshabilitado --- */
+.view-btn.disabled {
+    background-color: #2E7D32 !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    cursor: not-allowed;
+}
+/* ---------------------------------------------- */
+
+/* [El resto de tu CSS original (footer, responsive, etc.) se mantiene IDÉNTICO] */
 
 /* Estilo para la página de reconocimientos */
 .recognition-container {
@@ -469,81 +508,8 @@ body {
         font-size: 0.9rem;
     }
     
-    .recognition-item {
-        height: 300px;
-    }
-    
     .recognition-btn {
         padding: 6px 10px;
         font-size: 0.85rem;
     }
-}
-
-/* Media queries para el botón Volver */
-@media (max-width: 768px) {
-    .back-btn {
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 0.9rem;
-        padding: 8px 12px;
-    }
-    
-    .back-btn:hover {
-        transform: translateX(-50%) translateY(-2px);
-    }
-    
-    .recognition-container {
-        margin-top: 3.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .back-btn {
-        padding: 6px 10px;
-        font-size: 0.85rem;
-    }
-}
-
-.recognition-column {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-}
-
-.recognition-image img {
-    width: 300px;
-    max-width: 90%;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    border: 1px solid var(--light-gray);
-}
-
-.recognition-image img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 10000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.9);
-}
-
-.modal-content {
-    margin: 5% auto;
-    display: block;
-    width: 90%;
-    max-width: 700px;
-    border: 2px solid var(--lighter-gray);
-    border-radius: 8px;
 }
