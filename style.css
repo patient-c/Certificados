@@ -162,6 +162,37 @@ body {
     color: var(--light-gray);
 }
 
+/* Estilos para la barra de progreso */
+.progress-info {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--light-gray);
+}
+
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: var(--medium-gray);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--lightest-gray), var(--white));
+    transition: width 0.5s ease-out;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.progress-text {
+    font-size: 0.85rem;
+    color: var(--lighter-gray);
+    text-align: center;
+    font-style: italic;
+}
+
 /* Botón */
 .view-btn {
     display: block;
@@ -370,11 +401,9 @@ body {
     
     .cv-header {
         padding: 2rem 1.5rem;
-        /* Agrega margen superior para evitar que el botón tape el título */
         margin-top: 2.5rem;
     }
     
-    /* Cambia posición del botón de reconocimientos en móviles */
     .recognition-btn {
         top: 10px;
         left: 50%;
@@ -424,7 +453,6 @@ body {
     }
     
     .cv-header {
-        /* Aumentar margen superior en dispositivos muy pequeños */
         margin-top: 3rem;
     }
     
@@ -445,7 +473,6 @@ body {
         height: 300px;
     }
     
-    /* Ajustes adicionales para el botón de reconocimientos en dispositivos muy pequeños */
     .recognition-btn {
         padding: 6px 10px;
         font-size: 0.85rem;
@@ -520,4 +547,3 @@ body {
     border: 2px solid var(--lighter-gray);
     border-radius: 8px;
 }
-
