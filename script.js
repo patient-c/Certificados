@@ -107,34 +107,43 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); // Ejecutar una vez al cargar la página
 });
-// Ampliar imágenes de reconocimientos (versión mejorada)
+
+// Modal mejorado para imágenes (versión optimizada)
 document.querySelectorAll('.recognition-image img').forEach(img => {
     img.addEventListener('click', (e) => {
-        e.stopPropagation(); // Evita que el evento se propague
         const modal = document.getElementById('modal');
         const modalImg = document.getElementById('modal-img');
         
-        // Configuración mejorada del modal
-        modal.style.display = "flex"; // Cambiado a flex para mejor centrado
-        modal.style.alignItems = "center";
-        modal.style.justifyContent = "center";
+        // Configuración optimizada
+        modal.style.display = "flex";
         modalImg.src = img.src;
+        modalImg.alt = img.alt; // Mejor práctica de accesibilidad
         
-        // Ajustar tamaño de la imagen modal según la ventana
-        const maxWidth = Math.min(window.innerWidth * 0.9, img.naturalWidth);
-        const maxHeight = Math.min(window.innerHeight * 0.9, img.naturalHeight);
+        // Cálculo inteligente de dimensiones
+        const windowAspectRatio = window.innerWidth / window.innerHeight;
+        const imgAspectRatio = img.naturalWidth / img.naturalHeight;
         
-        modalImg.style.maxWidth = `${maxWidth}px`;
-        modalImg.style.maxHeight = `${maxHeight}px`;
-        modalImg.style.width = 'auto';
-        modalImg.style.height = 'auto';
+        if (windowAspectRatio > imgAspectRatio) {
+            // Ventana más ancha que la imagen
+            modalImg.style.height = '90vh';
+            modalImg.style.width = 'auto';
+        } else {
+            // Ventana más estrecha que la imagen
+            modalImg.style.width = '90vw';
+            modalImg.style.height = 'auto';
+        }
     });
 });
 
-// Cerrar modal al hacer clic en cualquier parte - CORRECCIÓN:
-document.getElementById('modal').addEventListener('click', (e) => {
-    if (e.target === document.getElementById('modal')) { // Se añadió el paréntesis que faltaba
-        document.getElementById('modal').style.display = "none";
+// Cerrar modal (versión mejorada)
+document.querySelector('.close-modal').addEventListener('click', () => {
+    document.getElementById('modal').style.display = "none";
+});
+
+// Cerrar al hacer clic fuera o en la X
+document.getElementById('modal').addEventListener('click', function(e) {
+    if (e.target === this || e.target.classList.contains('close-modal')) {
+        this.style.display = "none";
     }
 });
 
