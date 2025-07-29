@@ -107,18 +107,35 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); // Ejecutar una vez al cargar la página
 });
-// Ampliar imágenes de reconocimientos
+// Ampliar imágenes de reconocimientos (versión mejorada)
 document.querySelectorAll('.recognition-image img').forEach(img => {
-    img.addEventListener('click', () => {
+    img.addEventListener('click', (e) => {
+        e.stopPropagation(); // Evita que el evento se propague
         const modal = document.getElementById('modal');
         const modalImg = document.getElementById('modal-img');
-        modal.style.display = "block";
+        
+        // Configuración mejorada del modal
+        modal.style.display = "flex"; // Cambiado a flex para mejor centrado
+        modal.style.alignItems = "center";
+        modal.style.justifyContent = "center";
         modalImg.src = img.src;
+        
+        // Ajustar tamaño de la imagen modal según la ventana
+        const maxWidth = Math.min(window.innerWidth * 0.9, img.naturalWidth);
+        const maxHeight = Math.min(window.innerHeight * 0.9, img.naturalHeight);
+        
+        modalImg.style.maxWidth = `${maxWidth}px`;
+        modalImg.style.maxHeight = `${maxHeight}px`;
+        modalImg.style.width = 'auto';
+        modalImg.style.height = 'auto';
     });
 });
 
-document.getElementById('modal').addEventListener('click', () => {
-    document.getElementById('modal').style.display = "none";
+// Cerrar modal al hacer clic en cualquier parte
+document.getElementById('modal').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('modal') {
+        document.getElementById('modal').style.display = "none";
+    }
 });
 
 // Animar la barra de progreso al cargar
