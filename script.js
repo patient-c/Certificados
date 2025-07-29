@@ -120,3 +120,13 @@ document.querySelectorAll('.recognition-image img').forEach(img => {
 document.getElementById('modal').addEventListener('click', () => {
     document.getElementById('modal').style.display = "none";
 });
+
+// Animar la barra de progreso al cargar
+document.addEventListener('DOMContentLoaded', function() {
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        // Forzar repintado para que la animación funcione
+        void progressBar.offsetWidth;
+        progressBar.style.width = progressBar.style.width; // Esto activa la transición
+    }
+});
