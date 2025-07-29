@@ -514,3 +514,49 @@ body {
         font-size: 0.85rem;
     }
 }
+
+/* ===== ESTILOS ESPECÍFICOS PARA RECONOCIMIENTOS.HTML ===== */
+.recognition-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.recognition-image {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--light-gray);
+}
+
+.recognition-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 600px; /* Ajusta este valor según necesites */
+    margin: 0 auto;
+}
+
+.recognition-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Modal ajustado */
+.modal-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .recognition-image img {
+        max-width: 100%;
+    }
+}
