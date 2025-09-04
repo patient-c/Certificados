@@ -1,6 +1,6 @@
 # 🎓 Portafolio de Certificados - Rolando Rotela
 
-Un portafolio web personal con temática cybersecurity que presenta mis certificaciones profesionales y reconocimientos profesionales de manera visualmente atractiva.
+Un portafolio web personal con temática cybersecurity que presenta mis certificaciones profesionales y reconocimientos de manera visualmente atractiva.
 
 ## ✨ Características
 
