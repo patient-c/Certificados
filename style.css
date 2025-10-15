@@ -253,8 +253,6 @@ body {
 }
 /* ---------------------------------------------- */
 
-/* [El resto de tu CSS original (footer, responsive, etc.) se mantiene IDÉNTICO] */
-
 /* Estilo para la página de reconocimientos */
 .recognition-container {
     max-width: 1000px;
@@ -538,7 +536,7 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    max-width: 600px; /* Ajusta este valor según necesites */
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -611,3 +609,4 @@ body {
         font-size: 30px;
     }
 }
+
